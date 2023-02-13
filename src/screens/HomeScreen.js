@@ -13,8 +13,9 @@ import {
   AdjustmentsVerticalIcon,
   UserIcon,
   ChevronDownIcon,
-  SearchIcon,
 } from "react-native-heroicons/outline";
+import Categories from "../components/Categories";
+import Featured from "../components/Featured";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -50,7 +51,21 @@ const HomeScreen = () => {
         </View>
         <AdjustmentsVerticalIcon size={34} color="#00CCBB" />
       </View>
-      <ScrollView></ScrollView>
+      <ScrollView className="bg-gray-100">
+        <Categories />
+        <Featured
+          title={"Featured"}
+          description={"Paid placements from our partners"}
+        />
+        <Featured
+          title={"Tasty Discounts"}
+          description={"Everyone's been enjoying these juicy discounts"}
+        />
+        <Featured
+          title={"Offers Near You"}
+          description={"Why not support your local restaurants tonight"}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
